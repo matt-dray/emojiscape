@@ -1,0 +1,18 @@
+Package: emojiscape
+Title: Randomised Emoji Scenes
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matt",
+           family = "Dray",
+           role = c("aut", "cre"),
+           email = "mwdray@gmail.com")
+Description: Print to the console a randomised scene composed of emoji.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+    emo
+Remotes: 
+    hadley/emo
