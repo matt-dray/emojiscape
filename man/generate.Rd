@@ -4,12 +4,28 @@
 \alias{generate}
 \title{Generate An Emoji Scene}
 \usage{
-generate(terrain = c("ocean", "city", "desert"), size = 10)
+generate(
+  terrain = c("ocean", "city", "desert"),
+  mat_size = 10L,
+  prob_common = 0.96,
+  prob_uncommon = 0.03,
+  prob_rare = 0.01
+)
 }
 \arguments{
-\item{terrain}{Character. What type of locale?}
+\item{terrain}{Character. What type of locale? Currently limited to ocean,
+city or desert.}
 
-\item{size}{Numeric. Width of the emoji matrix.}
+\item{mat_size}{Integer greater than zero. Width and length of the emoji matrix.}
+
+\item{prob_common}{Numeric, bound 0 to 1. Probability of occurrence for the
+'common' emoji in the terrain set.}
+
+\item{prob_uncommon}{Numeric, bound 0 to 1. Probability of occurrence for the
+'uncommon' emoji in the terrain set.}
+
+\item{prob_rare}{Numeric, bound 0 to 1. Probability of occurrence for the
+rarest emoji in the terrain set.}
 }
 \value{
 Class NULL. Matrix of emoji printed to the console line by line with
@@ -17,6 +33,12 @@ cat().
 }
 \description{
 Print to the console a randomised scene composed of emoji.
+}
+\details{
+\preformatted{Your terrain choice results in the selection of a predetermined three-
+emoji set, from which a sample is taken to fill a square matrix with
+dimensions of mat_size. The prob_* arguments must sum to 1.
+}
 }
 \examples{
 generate(terrain = "ocean")
