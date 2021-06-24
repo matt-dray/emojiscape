@@ -1,12 +1,26 @@
 test_that("get_emoji() works", {
 
-  expect_identical(class(.get_emoji("ocean")), "list")
+  expect_identical(class(.get_emoji("arable")), "list")
   expect_identical(class(.get_emoji("city")), "list")
   expect_identical(class(.get_emoji("desert")), "list")
+  expect_identical(class(.get_emoji("forest")), "list")
+  expect_identical(class(.get_emoji("garden")), "list")
+  expect_identical(class(.get_emoji("mountains")), "list")
+  expect_identical(class(.get_emoji("ocean")), "list")
+  expect_identical(class(.get_emoji("pastoral")), "list")
+  expect_identical(class(.get_emoji("traffic")), "list")
+  expect_identical(class(.get_emoji("woods")), "list")
 
-  expect_identical(length(.get_emoji("ocean")), 3L)
+  expect_identical(length(.get_emoji("arable")), 3L)
   expect_identical(length(.get_emoji("city")), 3L)
   expect_identical(length(.get_emoji("desert")), 3L)
+  expect_identical(length(.get_emoji("forest")), 3L)
+  expect_identical(length(.get_emoji("garden")), 3L)
+  expect_identical(length(.get_emoji("mountains")), 3L)
+  expect_identical(length(.get_emoji("ocean")), 3L)
+  expect_identical(length(.get_emoji("pastoral")), 3L)
+  expect_identical(length(.get_emoji("traffic")), 3L)
+  expect_identical(length(.get_emoji("woods")), 3L)
 
 })
 

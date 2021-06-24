@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+set.seed(1)
 ```
 
 # {emojiscape}
@@ -19,11 +20,11 @@ knitr::opts_chunk$set(
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-The goal of {emojiscape} is whimsy.
+The goal of the {emojiscape} R package is pointless whimsy.
 
-It prints to the console a randomised scene composed of emoji. Each terrain type has three emoji that are sampled with provided probabilities (common, uncommon and rare).
+It prints to the console a randomised scene composed of emoji. Each terrain type has three emoji that are sampled with provided probabilities (common, uncommon and rare). Maybe I'll let you create your own emoji sets one day, but you have to earn it.
 
-Install {emojiscape} from GitHub. Requires [the GitHub-hosted {emo} package](https://github.com/hadley/emo).
+Install {emojiscape} from GitHub. Requires [the GitHub-hosted {emo} package](https://github.com/hadley/emo), which is built on [emojilib](https://github.com/muan/emojilib/).
 
 ```{r eval=FALSE}
 remotes::install_github("matt-dray/emojiscape")
@@ -31,20 +32,41 @@ remotes::install_github("matt-dray/emojiscape")
 
 Then `generate()` a scene. 
 
-Here's an `ocean`.
+Here's some `woods`. What a _hoot_.
 
-```{r ocean}
-emojiscape::generate(terrain = "ocean")
+```{r woods}
+emojiscape::generate(terrain = "woods")
 ```
 
-Here's a `city`.
+Here's a little raccoon `city`. Perhaps the _residents_ are _evil_? (That is a gamer joke, gg.)
 
 ```{r city}
-emojiscape::generate(terrain = "city")
+emojiscape::generate("city", mat_size = 5)
 ```
 
-Here's a `desert`.
+Here's a `pastoral` poultry farm. There are only roosters; we do not know where the eggs come from.
 
-```{r desert}
-emojiscape::generate(terrain = "desert")
+```{r pastoral}
+emojiscape::generate("pastoral", 7)
+```
+
+There are several other `terrain` options to try; see `?generate`.
+
+You can also mess with the emoji probabilities.
+
+Any _The Mountain Goats_ fans?
+
+```{r mountains}
+emojiscape::generate(
+  "mountains",
+  prob_common = 0.1,
+  prob_uncommon = 0.2,
+  prob_rare = 0.7
+)
+```
+
+How did I know which emoji were common, uncommon or rare for this terrain? (I should probably export this function, eh?)
+
+```{r mountains-emoji}
+emojiscape:::.get_emoji("mountains")
 ```

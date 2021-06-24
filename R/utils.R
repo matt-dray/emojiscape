@@ -1,11 +1,11 @@
 .get_emoji <- function(terrain) {
 
-  if (terrain == "ocean") {
+  if (terrain == "arable") {
 
     list(
-      emoji_common   = "water_wave",
-      emoji_uncommon = "desert_island",
-      emoji_rare     = "squid"
+      emoji_common   = "ear_of_corn",
+      emoji_uncommon = "tractor",
+      emoji_rare     = "mouse"
     )
 
   } else if (terrain == "city") {
@@ -24,16 +24,74 @@
       emoji_rare     = "camel"
     )
 
+  } else if (terrain == "forest") {
+
+    list(
+      emoji_common   = "evergreen_tree",
+      emoji_uncommon = "squirrel",
+      emoji_rare     = "christmas_tree"
+    )
+
+  } else if (terrain == "garden") {
+
+    list(
+      emoji_common   = "rose",
+      emoji_uncommon = "seedling",
+      emoji_rare     = "wilted_flower"
+    )
+
+  } else if (terrain == "mountains") {
+
+    list(
+      emoji_common   = "mountain",
+      emoji_uncommon = "snow_capped_mountain",
+      emoji_rare     = "goat"
+    )
+
+  } else if (terrain == "ocean") {
+
+    list(
+      emoji_common   = "water_wave",
+      emoji_uncommon = "desert_island",
+      emoji_rare     = "squid"
+    )
+
+  } else if (terrain == "pastoral") {
+
+    list(
+      emoji_common   = "rooster",
+      emoji_uncommon = "egg",
+      emoji_rare     = "hatching_chick"
+    )
+
+  } else if (terrain == "traffic") {
+
+    list(
+      emoji_common   = "automobile",
+      emoji_uncommon = "taxi",
+      emoji_rare     = "truck"
+    )
+
+  } else if (terrain == "woods") {
+
+    list(
+      emoji_common   = "deciduous_tree",
+      emoji_uncommon = "fallen_leaf",
+      emoji_rare     = "owl"
+    )
+
   }
 
 }
 
 .get_sample <- function(
   emoji_set,
-  size,
+  mat_size,
   prob_common,
   prob_uncommon,
   prob_rare) {
+
+  mat_size <- as.integer(mat_size)
 
   sample(
     x = c(
@@ -47,7 +105,7 @@
       prob_rare
     ),
     replace = TRUE,
-    size = size * size
+    size = mat_size * mat_size
   )
 
 }
