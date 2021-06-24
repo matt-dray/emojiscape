@@ -5,9 +5,9 @@
 \title{Generate An Emoji Scene}
 \usage{
 generate(
-  terrain = c("arable", "city", "desert", "forest", "garden", "mountains", "ocean",
-    "pastoral", "traffic", "woods"),
-  mat_size = 10,
+  terrain = c("arable", "city", "desert", "forest", "garden", "liminal", "mountains",
+    "ocean", "pastoral", "sky", "space", "traffic", "woods"),
+  grid_size = 10,
   prob_common = 0.75,
   prob_uncommon = 0.2,
   prob_rare = 0.05
@@ -17,7 +17,7 @@ generate(
 \item{terrain}{Character. What type of locale? See 'details' below for
 options.}
 
-\item{mat_size}{Numeric, greater than zero. Width and length of the emoji
+\item{grid_size}{Numeric, greater than zero. Width and length of the emoji
 matrix.}
 
 \item{prob_common}{Numeric. Probability of occurrence for the
@@ -40,11 +40,11 @@ terrain type.
 \details{
 Your terrain choice results in the selection of a predetermined three-
 emoji set, from which a sample is taken to fill a square matrix with
-dimensions of mat_size.
+dimensions of grid_size.
 
 Currently, terrain options are "arable", "city",
-"desert", "forest", "garden", "mountains", "ocean", "pastoral", "traffic"
-and "woods".
+"desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
+"space", "space", "traffic" and "woods".
 
 The prob_* arguments are passed to sample() and are relative
 to each other.

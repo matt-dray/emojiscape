@@ -6,7 +6,7 @@
 #'
 #' @param terrain Character. What type of locale? See 'details' below for
 #'     options.
-#' @param mat_size Numeric, greater than zero. Width and length of the emoji
+#' @param grid_size Numeric, greater than zero. Width and length of the emoji
 #'     matrix.
 #' @param prob_common Numeric. Probability of occurrence for the
 #'     'common' emoji in the terrain set.
@@ -18,11 +18,11 @@
 #' @details
 #' Your terrain choice results in the selection of a predetermined three-
 #' emoji set, from which a sample is taken to fill a square matrix with
-#' dimensions of mat_size.
+#' dimensions of grid_size.
 #'
 #' Currently, terrain options are "arable", "city",
-#' "desert", "forest", "garden", "mountains", "ocean", "pastoral", "traffic"
-#' and "woods".
+#' "desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
+#' "space", "space", "traffic" and "woods".
 #'
 #' The prob_* arguments are passed to sample() and are relative
 #' to each other.
@@ -34,16 +34,18 @@
 #'
 #' @examples generate("ocean")
 generate <- function(
-  terrain = c("arable", "city", "desert", "forest", "garden", "mountains",
-              "ocean", "pastoral", "traffic", "woods"),
-  mat_size = 10,
+  terrain = c("arable", "city", "desert", "forest", "garden", "liminal",
+              "mountains", "ocean", "pastoral", "sky", "space", "traffic",
+              "woods"),
+  grid_size = 10,
   prob_common = 0.75,
   prob_uncommon = 0.2,
   prob_rare = 0.05) {
 
   terrain_set <- c(
-    "arable", "city", "desert", "forest", "garden", "mountains", "ocean",
-    "pastoral", "traffic", "woods"
+    "arable", "city", "desert", "forest", "garden", "liminal",
+    "mountains", "ocean", "pastoral", "sky", "space", "traffic",
+    "woods"
   )
 
   if (
@@ -51,33 +53,88 @@ generate <- function(
     !terrain %in% terrain_set |
     !is.character("terrain")) {
     stop(
-      "Argument 'terrain' must be on of those listed in ?generate."
+      "Argument 'terrain' must be one of those listed in the details of ?generate."
     )
   }
 
-  if (mat_size <= 0) {
-    stop("Argument mat_size must be larger than 0.")
+  if (grid_size <= 0) {
+    stop("Argument grid_size must be larger than 0.")
   }
 
-  if (mat_size %% 1 != 0) {
-    warning("Argument 'mat_size' will be forced to nearest ceiling value.")
-    mat_size <- ceiling(mat_size)
+  if (grid_size %% 1 != 0) {
+    warning("Argument 'grid_size' will be forced to nearest ceiling value.")
+    grid_size <- ceiling(grid_size)
   }
 
   emoji_set <- .get_emoji(terrain)
 
   emoji_sample <- .get_sample(
     emoji_set,
-    mat_size,
+    grid_size,
     prob_common,
     prob_uncommon,
     prob_rare
   )
 
-  emoji_matrix <- .get_matrix(emoji_sample, mat_size)
+  emoji_matrix <- .get_matrix(emoji_sample, grid_size)
 
   for (i in 1:nrow(emoji_matrix)) {
     cat(emoji_matrix[i, ], "\n")
   }
+
+}
+
+
+#' See Emoji In Each Terrain
+#'
+#' Print a dataframe with the emoji that are found in the name terrain and their
+#' probability slot.
+#'
+#' @param terrain Character. What type of locale? See 'details' below for
+#'     options.
+#'
+#' @details
+#' Currently, terrain options are "arable", "city",
+#' "desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
+#' "space", "space", "traffic" and "woods".
+#'
+#' @return A data.frame of 4 columns and 3 rows.
+#'
+#' @export
+#'
+#' @examples get_set("space")
+get_set <- function(terrain) {
+
+  terrain_set <- c(
+    "arable", "city", "desert", "forest", "garden", "liminal",
+    "mountains", "ocean", "pastoral", "sky", "space", "traffic",
+    "woods"
+  )
+
+  if (
+    length(terrain) > 1 |
+    !terrain %in% terrain_set |
+    !is.character("terrain")) {
+    stop(
+      "Argument 'terrain' must be one of those listed in the details of ?generate."
+    )
+  }
+
+  x <- .get_emoji(terrain)
+
+  data.frame(
+    terrain = terrain,
+    freq = c("common", "uncommon", "rare"),
+    name = c(
+      x$emoji_common,
+      x$emoji_uncommon,
+      x$emoji_rare
+    ),
+    emoji = c(
+      emo::ji(x$emoji_common),
+      emo::ji(x$emoji_uncommon),
+      emo::ji(x$emoji_rare)
+    )
+  )
 
 }

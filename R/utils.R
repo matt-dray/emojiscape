@@ -40,6 +40,14 @@
       emoji_rare     = "wilted_flower"
     )
 
+  } else if (terrain == "liminal") {
+
+    list(
+      emoji_common   = "white_large_square",
+      emoji_uncommon = "door",
+      emoji_rare     = "light_bulb"
+    )
+
   } else if (terrain == "mountains") {
 
     list(
@@ -64,6 +72,22 @@
       emoji_rare     = "hatching_chick"
     )
 
+  } else if (terrain == "sky") {
+
+    list(
+      emoji_common   = "cloud_with_rain",
+      emoji_uncommon = "rainbow",
+      emoji_rare     = "airplane"
+    )
+
+  } else if (terrain == "space") {
+
+    list(
+      emoji_common   = "black_large_square",
+      emoji_uncommon = "star",
+      emoji_rare     = "orbit"
+    )
+
   } else if (terrain == "traffic") {
 
     list(
@@ -86,12 +110,12 @@
 
 .get_sample <- function(
   emoji_set,
-  mat_size,
+  grid_size,
   prob_common,
   prob_uncommon,
   prob_rare) {
 
-  mat_size <- as.integer(mat_size)
+  grid_size <- as.integer(grid_size)
 
   sample(
     x = c(
@@ -105,17 +129,17 @@
       prob_rare
     ),
     replace = TRUE,
-    size = mat_size * mat_size
+    size = grid_size * grid_size
   )
 
 }
 
-.get_matrix <- function(emoji_sample, mat_size) {
+.get_matrix <- function(emoji_sample, grid_size) {
 
   matrix(
     data = emoji_sample,
-    nrow = mat_size,
-    ncol = mat_size
+    nrow = grid_size,
+    ncol = grid_size
   )
 
 }

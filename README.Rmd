@@ -11,7 +11,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-set.seed(1)
+library(emojiscape)
+set.seed(1337)
 ```
 
 # {emojiscape}
@@ -20,17 +21,25 @@ set.seed(1)
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-The goal of the {emojiscape} R package is pointless whimsy.
+{emojiscape} is a tiny R package that prints to the console a randomised emoji scene. Choose a terrain and three emoji of that theme will be sampled with different probabilities and rendered to a grid size of your choosing.
 
-It prints to the console a randomised scene composed of emoji. Each terrain type has three emoji that are sampled with provided probabilities (common, uncommon and rare). Maybe I'll let you create your own emoji sets one day, but you have to earn it.
+## Install
 
-Install {emojiscape} from GitHub. Requires [the GitHub-hosted {emo} package](https://github.com/hadley/emo), which is built on [emojilib](https://github.com/muan/emojilib/).
+Install {emojiscape} from GitHub. It requires [the GitHub-hosted {emo} package](https://github.com/hadley/emo), which is built on [emojilib](https://github.com/muan/emojilib/).
 
 ```{r eval=FALSE}
 remotes::install_github("matt-dray/emojiscape")
 ```
 
-Then `generate()` a scene. 
+No guarantees. I've tested it only on my own macOS machine.
+
+## Build a tiny world
+
+Let's `generate()` a scene. There are several `terrain` options to try (yes, there is `liminal`).
+
+```{r terrrain-set, echo=FALSE}
+paste(as.list(args(generate))$terrain)[-1]
+```
 
 Here's some `woods`. What a _hoot_.
 
@@ -38,21 +47,27 @@ Here's some `woods`. What a _hoot_.
 emojiscape::generate(terrain = "woods")
 ```
 
+Hold your breath, we're going to `space`. You can resize the output, but space is basically infinite and my console is not.
+
+```{r space}
+emojiscape::generate("space", grid_size = 7)
+```
+
 Here's a little raccoon `city`. Perhaps the _residents_ are _evil_? (That is a gamer joke, gg.)
 
 ```{r city}
-emojiscape::generate("city", mat_size = 5)
+emojiscape::generate("city", 5)
 ```
 
-Here's a `pastoral` poultry farm. There are only roosters; we do not know where the eggs come from.
+## Tune the frequencies
 
-```{r pastoral}
-emojiscape::generate("pastoral", 7)
+Use `get_set()` to see each terrain's emoji set and their 'suggested frequency' slot.
+
+```{r mountains-emoji}
+emojiscape::get_set("mountains")
 ```
 
-There are several other `terrain` options to try; see `?generate`.
-
-You can also mess with the emoji probabilities.
+But you can totally mess with the probablities for these in `generate()`.
 
 Any _The Mountain Goats_ fans?
 
@@ -61,12 +76,7 @@ emojiscape::generate(
   "mountains",
   prob_common = 0.1,
   prob_uncommon = 0.2,
-  prob_rare = 0.7
+  prob_rare = 0.7  # INCREASE GOAT FREQUENCY
 )
 ```
 
-How did I know which emoji were common, uncommon or rare for this terrain? (I should probably export this function, eh?)
-
-```{r mountains-emoji}
-emojiscape:::.get_emoji("mountains")
-```
