@@ -132,7 +132,7 @@
 
     list(
       emoji_common   = "deciduous_tree",
-      emoji_uncommon = "fallen_leaf",
+      emoji_uncommon = "leaf_fluttering_in_wind",
       emoji_rare     = "chipmunk"
     )
 
