@@ -6,7 +6,8 @@
 \usage{
 generate(
   terrain = c("arable", "city", "desert", "forest", "garden", "liminal", "mountains",
-    "ocean", "pastoral", "sky", "space", "traffic", "woods"),
+    "ocean", "pastoral", "polar", "rainforest", "sky", "space", "suburbs", "traffic",
+    "undergrowth", "woods"),
   grid_size = 10,
   prob_common = 0.75,
   prob_uncommon = 0.2,
@@ -42,9 +43,9 @@ Your terrain choice results in the selection of a predetermined three-
 emoji set, from which a sample is taken to fill a square matrix with
 dimensions of grid_size.
 
-Currently, terrain options are "arable", "city",
-"desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
-"space", "space", "traffic" and "woods".
+Currently, terrain options are "arable", "city", "desert", "forest",
+"garden", "liminal", "mountains", "ocean", "pastoral", "polar", "rainforest",
+"roads", "sky", "space", "undergrowth" and "woods".
 
 The prob_* arguments are passed to sample() and are relative
 to each other.

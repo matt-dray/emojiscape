@@ -61,7 +61,7 @@
     list(
       emoji_common   = "water_wave",
       emoji_uncommon = "desert_island",
-      emoji_rare     = "squid"
+      emoji_rare     = "dolphin"
     )
 
   } else if (terrain == "pastoral") {
@@ -70,6 +70,22 @@
       emoji_common   = "rooster",
       emoji_uncommon = "egg",
       emoji_rare     = "hatching_chick"
+    )
+
+  } else if (terrain == "polar") {
+
+    list(
+      emoji_common   = "cloud_with_snow",
+      emoji_uncommon = "snowflake",
+      emoji_rare     = "penguin"
+    )
+
+  } else if (terrain == "rainforest") {
+
+    list(
+      emoji_common   = "deciduous_tree",
+      emoji_uncommon = "snake",
+      emoji_rare     = "gorilla"
     )
 
   } else if (terrain == "sky") {
@@ -88,6 +104,14 @@
       emoji_rare     = "orbit"
     )
 
+  } else if (terrain == "suburbs") {
+
+    list(
+      emoji_common   = "deciduous_tree",
+      emoji_uncommon = "house_with_garden",
+      emoji_rare     = "person_biking"
+    )
+
   } else if (terrain == "traffic") {
 
     list(
@@ -96,12 +120,20 @@
       emoji_rare     = "truck"
     )
 
+  } else if (terrain == "undergrowth") {
+
+    list(
+      emoji_common   = "fallen_leaf",
+      emoji_uncommon = "ant",
+      emoji_rare     = "mushroom"
+    )
+
   } else if (terrain == "woods") {
 
     list(
       emoji_common   = "deciduous_tree",
       emoji_uncommon = "fallen_leaf",
-      emoji_rare     = "owl"
+      emoji_rare     = "chipmunk"
     )
 
   }

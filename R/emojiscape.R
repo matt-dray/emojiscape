@@ -20,9 +20,9 @@
 #' emoji set, from which a sample is taken to fill a square matrix with
 #' dimensions of grid_size.
 #'
-#' Currently, terrain options are "arable", "city",
-#' "desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
-#' "space", "space", "traffic" and "woods".
+#' Currently, terrain options are "arable", "city", "desert", "forest",
+#' "garden", "liminal", "mountains", "ocean", "pastoral", "polar", "rainforest",
+#' "roads", "sky", "space", "undergrowth" and "woods".
 #'
 #' The prob_* arguments are passed to sample() and are relative
 #' to each other.
@@ -35,8 +35,8 @@
 #' @examples generate("ocean")
 generate <- function(
   terrain = c("arable", "city", "desert", "forest", "garden", "liminal",
-              "mountains", "ocean", "pastoral", "sky", "space", "traffic",
-              "woods"),
+              "mountains", "ocean", "pastoral", "polar", "rainforest", "sky",
+              "space", "suburbs", "traffic", "undergrowth", "woods"),
   grid_size = 10,
   prob_common = 0.75,
   prob_uncommon = 0.2,
@@ -44,8 +44,8 @@ generate <- function(
 
   terrain_set <- c(
     "arable", "city", "desert", "forest", "garden", "liminal",
-    "mountains", "ocean", "pastoral", "sky", "space", "traffic",
-    "woods"
+    "mountains", "ocean", "pastoral", "polar", "rainforest", "sky",
+    "space", "suburbs", "traffic", "undergrowth", "woods"
   )
 
   if (
@@ -94,9 +94,9 @@ generate <- function(
 #'     options.
 #'
 #' @details
-#' Currently, terrain options are "arable", "city",
-#' "desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
-#' "space", "space", "traffic" and "woods".
+#' Currently, terrain options are  "arable", "city", "desert", "forest",
+#' "garden", "liminal", "mountains", "ocean", "pastoral", "polar", "rainforest",
+#' "sky", "space", "suburbs", "traffic", "undergrowth" and "woods".
 #'
 #' @return A data.frame of 4 columns and 3 rows.
 #'
@@ -107,8 +107,8 @@ get_set <- function(terrain) {
 
   terrain_set <- c(
     "arable", "city", "desert", "forest", "garden", "liminal",
-    "mountains", "ocean", "pastoral", "sky", "space", "traffic",
-    "woods"
+    "mountains", "ocean", "pastoral", "polar", "rainforest", "sky",
+    "space", "suburbs", "traffic", "undergrowth", "woods"
   )
 
   if (
@@ -124,7 +124,6 @@ get_set <- function(terrain) {
 
   data.frame(
     terrain = terrain,
-    freq = c("common", "uncommon", "rare"),
     name = c(
       x$emoji_common,
       x$emoji_uncommon,
@@ -134,7 +133,8 @@ get_set <- function(terrain) {
       emo::ji(x$emoji_common),
       emo::ji(x$emoji_uncommon),
       emo::ji(x$emoji_rare)
-    )
+    ),
+    freq = c("common", "uncommon", "rare")
   )
 
 }

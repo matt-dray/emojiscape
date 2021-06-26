@@ -18,9 +18,9 @@ Print a dataframe with the emoji that are found in the name terrain and their
 probability slot.
 }
 \details{
-Currently, terrain options are "arable", "city",
-"desert", "forest", "garden", "liminal", "mountains", "ocean", "pastoral",
-"space", "space", "traffic" and "woods".
+Currently, terrain options are  "arable", "city", "desert", "forest",
+"garden", "liminal", "mountains", "ocean", "pastoral", "polar", "rainforest",
+"sky", "space", "suburbs", "traffic", "undergrowth" and "woods".
 }
 \examples{
 get_set("space")
