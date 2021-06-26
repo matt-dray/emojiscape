@@ -83,7 +83,12 @@ purrr::walk(terrain_options, print_scape)
 
 <details><summary>Click for all emoji sets</summary>
 ```{r echo=FALSE}
-purrr::walk(terrain_options, emojiscape::get_set)
+print_scape <- function(terrain) {
+  cat(paste0('\nterrain = "', terrain, '"\n'))
+  print(emojiscape::get_set(terrain))
+}
+
+purrr::walk(terrain_options, print_scape)
 ```
 </details>
 

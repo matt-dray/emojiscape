@@ -305,6 +305,110 @@ Click for a preview of all terrains
 <summary>
 Click for all emoji sets
 </summary>
+
+
+    terrain = "arable"
+      terrain        name emoji     freq
+    1  arable ear_of_corn    🌽   common
+    2  arable     tractor    🚜 uncommon
+    3  arable       mouse    🐭     rare
+
+    terrain = "city"
+      terrain             name emoji     freq
+    1    city  office_building    🏢   common
+    2    city department_store    🏬 uncommon
+    3    city          raccoon    🦝     rare
+
+    terrain = "desert"
+      terrain   name emoji     freq
+    1  desert desert     🏜   common
+    2  desert cactus    🌵 uncommon
+    3  desert  camel    🐫     rare
+
+    terrain = "forest"
+      terrain           name emoji     freq
+    1  forest evergreen_tree    🌲   common
+    2  forest       squirrel     🐿 uncommon
+    3  forest christmas_tree    🎄     rare
+
+    terrain = "garden"
+      terrain          name emoji     freq
+    1  garden          rose    🌹   common
+    2  garden      seedling    🌱 uncommon
+    3  garden wilted_flower    🥀     rare
+
+    terrain = "liminal"
+      terrain               name emoji     freq
+    1 liminal white_large_square    ⬜   common
+    2 liminal               door    🚪 uncommon
+    3 liminal         light_bulb    💡     rare
+
+    terrain = "mountains"
+        terrain                 name emoji     freq
+    1 mountains             mountain     ⛰   common
+    2 mountains snow_capped_mountain     🏔️ uncommon
+    3 mountains                 goat    🐐     rare
+
+    terrain = "ocean"
+      terrain          name emoji     freq
+    1   ocean    water_wave    🌊   common
+    2   ocean desert_island     🏝 uncommon
+    3   ocean       dolphin    🐬     rare
+
+    terrain = "pastoral"
+       terrain           name emoji     freq
+    1 pastoral        rooster    🐓   common
+    2 pastoral            egg    🥚 uncommon
+    3 pastoral hatching_chick    🐣     rare
+
+    terrain = "polar"
+      terrain            name emoji     freq
+    1   polar cloud_with_snow     🌨   common
+    2   polar       snowflake     ❄️ uncommon
+    3   polar         penguin    🐧     rare
+
+    terrain = "rainforest"
+         terrain           name emoji     freq
+    1 rainforest deciduous_tree    🌳   common
+    2 rainforest          snake    🐍 uncommon
+    3 rainforest        gorilla    🦍     rare
+
+    terrain = "sky"
+      terrain            name emoji     freq
+    1     sky cloud_with_rain     🌧   common
+    2     sky         rainbow    🌈 uncommon
+    3     sky        airplane     ✈️     rare
+
+    terrain = "space"
+      terrain               name emoji     freq
+    1   space black_large_square    ⬛   common
+    2   space               star    ⭐ uncommon
+    3   space              orbit     🛰     rare
+
+    terrain = "suburbs"
+      terrain              name emoji     freq
+    1 suburbs    deciduous_tree    🌳   common
+    2 suburbs house_with_garden    🏡 uncommon
+    3 suburbs     person_biking    🚴     rare
+
+    terrain = "traffic"
+      terrain       name emoji     freq
+    1 traffic automobile    🚗   common
+    2 traffic       taxi    🚕 uncommon
+    3 traffic      truck    🚚     rare
+
+    terrain = "undergrowth"
+          terrain        name emoji     freq
+    1 undergrowth fallen_leaf    🍂   common
+    2 undergrowth         ant    🐜 uncommon
+    3 undergrowth    mushroom    🍄     rare
+
+    terrain = "woods"
+      terrain           name emoji     freq
+    1   woods deciduous_tree    🌳   common
+    2   woods       chestnut    🌰 uncommon
+    3   woods       chipmunk     🐿     rare
+
 </details>
 
 ## Terrain expansion
