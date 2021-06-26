@@ -9,6 +9,8 @@
 yet, or the repository is only intended to be a limited example, demo,
 or
 proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+[![rostrum.blog
+post](https://img.shields.io/badge/rostrum.blog-post-008900?style=flat&labelColor=black&logo=data:image/gif;base64,R0lGODlhEAAQAPEAAAAAABWCBAAAAAAAACH5BAlkAAIAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAAC55QkISIiEoQQQgghRBBCiCAIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAAh+QQJZAACACwAAAAAEAAQAAAC55QkIiESIoQQQgghhAhCBCEIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAA7)](https://www.rostrum.blog/2021/06/26/emojiscape/)
 <!-- badges: end -->
 
 {emojiscape} is a tiny R package that prints to the console a randomised
@@ -287,16 +289,16 @@ Click for a preview of all terrains
     🍂 🍂 🐜 🍂 🐜 🍂 🍄 🍂 🍂 🍂 
 
     terrain = "woods"
-    🍂 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🍂 🍂 
-    🐿 🌳 🌳 🌳 🌳 🍂 🌳 🌳 🍂 🍂 
+    🌰 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌰 🌰 
+    🐿 🌳 🌳 🌳 🌳 🌰 🌳 🌳 🌰 🌰 
     🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳 
-    🌳 🍂 🌳 🌳 🌳 🌳 🌳 🌳 🍂 🍂 
-    🍂 🌳 🌳 🌳 🌳 🌳 🍂 🌳 🍂 🌳 
-    🍂 🌳 🌳 🌳 🍂 🌳 🍂 🍂 🌳 🌳 
-    🌳 🍂 🌳 🌳 🌳 🍂 🌳 🌳 🌳 🌳 
-    🌳 🌳 🍂 🌳 🌳 🍂 🌳 🍂 🌳 🌳 
-    🍂 🌳 🍂 🐿 🌳 🌳 🌳 🌳 🌳 🌳 
-    🌳 🍂 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳 
+    🌳 🌰 🌳 🌳 🌳 🌳 🌳 🌳 🌰 🌰 
+    🌰 🌳 🌳 🌳 🌳 🌳 🌰 🌳 🌰 🌳 
+    🌰 🌳 🌳 🌳 🌰 🌳 🌰 🌰 🌳 🌳 
+    🌳 🌰 🌳 🌳 🌳 🌰 🌳 🌳 🌳 🌳 
+    🌳 🌳 🌰 🌳 🌳 🌰 🌳 🌰 🌳 🌳 
+    🌰 🌳 🌰 🐿 🌳 🌳 🌳 🌳 🌳 🌳 
+    🌳 🌰 🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳 
 
 </details>
 <details>
